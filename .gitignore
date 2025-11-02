@@ -1,0 +1,31 @@
+# Build
+bin/
+obj/
+
+# IDE
+.vs/
+.vscode/
+*.user
+*.suo
+
+# Logs
+*.log
+
+# Secrets
+appsettings.Development.json
+appsettings.json
+appsettings.*.json  # Thêm để cover các env khác như Production, Staging
+.env
+.sonarqube
+VoltSwap.API/Properties/launchSettings.json
+launchSettings.json
+efpt.config.json
+# Dependency packages (nếu dùng NuGet)
+packages/
+*.nupkg
+
+# OS generated files
+.DS_Store
+Thumbs.db
+# Runtime data
+App_Data/
