@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -123,7 +123,7 @@ namespace VoltSwap.API.Controllers
 
         //Bin: Tạo staff mới 
         [HttpPut("create-staff")]
-        public async Task<IActionResult> CreateStaff( StaffCreateRequest request)
+        public async Task<IActionResult> CreateStaff(StaffCreateRequest request)
         {
             var createStaff = await _userService.CreateNewStaffAsync(request);
             return StatusCode(createStaff.Status,
@@ -164,14 +164,14 @@ namespace VoltSwap.API.Controllers
                             });
         }
         [HttpGet("ping")]
-    public IActionResult Ping()
-    {
-        return Ok(new
+        public IActionResult Ping()
         {
-            message = "API ĐÃ KẾT NỐI THÀNH CÔNG TỪ NGROK!",
-            time = DateTime.UtcNow,
-            origin = Request.Headers["Origin"]
-        });
+            return Ok(new
+            {
+                message = "API ĐÃ KẾT NỐI THÀNH CÔNG TỪ NGROK!",
+                time = DateTime.UtcNow,
+                origin = Request.Headers["Origin"]
+            });
+        }
     }
 }
-    }
