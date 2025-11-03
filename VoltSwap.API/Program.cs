@@ -66,6 +66,7 @@ builder.Services.AddScoped<IBookingService, BookingService>();
 builder.Services.AddScoped<IPlanService, PlanService>();
 builder.Services.AddScoped<IOverviewService, OverviewService>();
 builder.Services.AddScoped<IBatteryService, BatteryService>();
+builder.Services.AddScoped<IFeeService, FeeService>();
 builder.Services.AddScoped<TransactionService>();
 builder.Services.AddScoped(typeof(IGenericRepositories<>), typeof(GenericRepositories<>));
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
