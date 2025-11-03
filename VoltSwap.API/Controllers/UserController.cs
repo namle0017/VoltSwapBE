@@ -163,5 +163,16 @@ namespace VoltSwap.API.Controllers
                                 data = getDriverDetail.Data
                             });
         }
+        [HttpGet("ping")]
+    public IActionResult Ping()
+    {
+        return Ok(new
+        {
+            message = "API ĐÃ KẾT NỐI THÀNH CÔNG TỪ NGROK!",
+            time = DateTime.UtcNow,
+            origin = Request.Headers["Origin"]
+        });
+    }
+}
     }
 }
