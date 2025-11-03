@@ -17,8 +17,6 @@ namespace VoltSwap.API.Controllers
             _userService = userService;
         }
 
-
-        //Cái này là của lấy thông tin của người dùng, user và admin thấy được
         [HttpGet("user-information")]
         public async Task<IActionResult> GetUserUpdateInformation([FromQuery] UserRequest requestDto)
         {
@@ -32,7 +30,6 @@ namespace VoltSwap.API.Controllers
             return StatusCode(getUserInformation.Status, new { message = getUserInformation.Message, data = getUserInformation.Data });
         }
 
-        //Cái này để update thông tin của người dùng
         [HttpPut("update-user-information")]
         public async Task<IActionResult> UpdateUserInformation(DriverUpdate requestDto)
         {
@@ -50,7 +47,6 @@ namespace VoltSwap.API.Controllers
                                 data = updateDriverInformation.Data
                             });
         }
-
 
         [HttpGet("staff-information")]
         public async Task<IActionResult> GetStaffUpdateInformation([FromQuery] UserRequest requestDto)
@@ -70,8 +66,6 @@ namespace VoltSwap.API.Controllers
                 });
         }
 
-
-
         [HttpPut("update-staff-information")]
         public async Task<IActionResult> UpdateStaffInformation(StaffUpdate requestDto)
         {
@@ -90,7 +84,6 @@ namespace VoltSwap.API.Controllers
                             });
         }
 
-        //Bin: xóa người dùng (staff, driver)
         [HttpPost("delete-user")]
         public async Task<IActionResult> DeleteUserById([FromBody] UserRequest requestDto)
         {
@@ -107,8 +100,6 @@ namespace VoltSwap.API.Controllers
                             });
         }
 
-
-        // Bin: Lấy danh sách nhân viên của trạm 
         [HttpGet("staff-list")]
         public async Task<IActionResult> GetStaffListByStationId()
         {
@@ -121,7 +112,6 @@ namespace VoltSwap.API.Controllers
                             });
         }
 
-        //Bin: Tạo staff mới 
         [HttpPut("create-staff")]
         public async Task<IActionResult> CreateStaff(StaffCreateRequest request)
         {
@@ -134,7 +124,6 @@ namespace VoltSwap.API.Controllers
                             });
         }
 
-        // Bin: Lấy danh sách tài xế
         [HttpGet("driver-list")]
         public async Task<IActionResult> GetDriverList()
         {
@@ -147,7 +136,6 @@ namespace VoltSwap.API.Controllers
                             });
         }
 
-        //Bin: xem detail của tài xế 
         [HttpGet("driver-detail")]
         public async Task<IActionResult> GetDriverDetailById([FromQuery] UserRequest requestDto)
         {
@@ -163,6 +151,7 @@ namespace VoltSwap.API.Controllers
                                 data = getDriverDetail.Data
                             });
         }
+
         [HttpGet("ping")]
         public IActionResult Ping()
         {
@@ -173,5 +162,5 @@ namespace VoltSwap.API.Controllers
                 origin = Request.Headers["Origin"]
             });
         }
-    }
-}
+    } // ← Đóng class
+} // ← Đóng namespace → ĐÚNG
