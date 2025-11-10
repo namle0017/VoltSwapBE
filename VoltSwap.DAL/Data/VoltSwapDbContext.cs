@@ -57,11 +57,6 @@ public partial class VoltSwapDbContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-public VoltSwapDbContext(DbContextOptions<VoltSwapDbContext> options)
-    : base(options)
-{
-}
-
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
