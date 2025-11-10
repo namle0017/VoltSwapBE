@@ -28,7 +28,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", b =>
     {
-        b.WithOrigins("https://volt-swap-qmcujvfyg-namle0017s-projects.vercel.app/"
+        b.WithOrigins("https://volt-swap-qmcujvfyg-namle0017s-projects.vercel.app"
             )
          .AllowAnyMethod()
          .AllowAnyHeader()
@@ -91,7 +91,7 @@ app.Use(async (context, next) =>
 {
     if (context.Request.Method == "OPTIONS")
     {
-        context.Response.Headers["Access-Control-Allow-Origin"] = "https://volt-swap.vercel.app";
+        context.Response.Headers["Access-Control-Allow-Origin"] = "https://volt-swap-qmcujvfyg-namle0017s-projects.vercel.app";
         context.Response.Headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS";
         context.Response.Headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization, X-Requested-With";
         context.Response.Headers["Access-Control-Allow-Credentials"] = "true";
