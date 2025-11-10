@@ -28,9 +28,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", b =>
     {
-        b.WithOrigins("https://volt-swap.vercel.app",
-            "https://volt-swap.vercel.app",
-            "https://volt-swap.vercel.app"
+        b.WithOrigins("https://volt-swap-qmcujvfyg-namle0017s-projects.vercel.app/"
             )
          .AllowAnyMethod()
          .AllowAnyHeader()
