@@ -11,7 +11,10 @@ using VoltSwap.DAL.Repositories;
 using VoltSwap.DAL.UnitOfWork;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Configuration
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables();
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddControllers()
@@ -76,6 +79,7 @@ builder.Logging.SetMinimumLevel(LogLevel.Warning);
 
 
 var app = builder.Build();
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
