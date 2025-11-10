@@ -28,8 +28,8 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", b =>
     {
-        b.WithOrigins("http://localhost:5173",
-            "https://localhost:5173",
+        b.WithOrigins("https://volt-swap.vercel.app",
+            "https://volt-swap.vercel.app",
             "https://volt-swap.vercel.app"
             )
          .AllowAnyMethod()
