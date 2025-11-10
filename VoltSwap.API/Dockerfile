@@ -8,14 +8,21 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
-# Copy project file và restore dependencies
+# COPY TẤT CẢ .CSPROJ TRƯỚC ĐỂ RESTORE CHÍNH XÁC
 COPY ["VoltSwap.API/VoltSwap.API.csproj", "VoltSwap.API/"]
+COPY ["VoltSwap.BusinessLayer/VoltSwap.BusinessLayer.csproj", "VoltSwap.BusinessLayer/"]
+COPY ["VoltSwap.Common/VoltSwap.Common.csproj", "VoltSwap.Common/"]
+COPY ["VoltSwap.DAL/VoltSwap.DAL.csproj", "VoltSwap.DAL/"]
+
+# Restore với project chính
 RUN dotnet restore "VoltSwap.API/VoltSwap.API.csproj"
 
-# Copy toàn bộ source code và build
+# Copy toàn bộ source code
 COPY . .
+
+# Build & publish
 WORKDIR "/src/VoltSwap.API"
-RUN dotnet publish "VoltSwap.API.csproj" -c Release -o /app/publish
+RUN dotnet publish "VoltSwap.API.csproj" -c Release -o /app/publish --no-restore
 
 # Final stage
 FROM base AS final
