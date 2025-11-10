@@ -113,5 +113,8 @@ if (!app.Environment.IsDevelopment())
 } // 2. CORS trước UseHttpsRedirection
 app.UseAuthorization();      // 4.
 app.MapControllers();
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+app.Urls.Add($"http://0.0.0.0:{port}");
 
+app.Run();
 app.Run();
