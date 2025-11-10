@@ -15,11 +15,11 @@
     <PackageReference Include="VNPAY.NET" Version="8.5.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\VoltSwap.BusinessLayer\VoltSwap.BusinessLayer.csproj" />
-    <ProjectReference Include="..\VoltSwap.Common\VoltSwap.Common.csproj" />
-    <ProjectReference Include="..\VoltSwap.DAL\VoltSwap.DAL.csproj" />
-  </ItemGroup>
+<ItemGroup>
+  <ProjectReference Include="/src/VoltSwap.BusinessLayer/VoltSwap.BusinessLayer.csproj" />
+  <ProjectReference Include="/src/VoltSwap.Common/VoltSwap.Common.csproj" />
+  <ProjectReference Include="/src/VoltSwap.DAL/VoltSwap.DAL.csproj" />
+</ItemGroup>
 
   <ItemGroup>
     <Compile Update="Program.cs">
